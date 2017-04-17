@@ -6,6 +6,11 @@ Os métodos estão sem autenticação de usuário.
 Estamos em contrução da aplicação, e só é possível utilizar a aplicação através de métodos Web.Api. Abaixo você encontrará os métodos disponíveis.
 
 
+Para aplicação rodar, é necessário a instalação do SQLLocalDB: https://www.microsoft.com/en-US/download/details.aspx?id=42299  
+* Após clicar em Download, selecione opção SQLLocalDB 64bits  
+* Após a instalação abrir o Package Manager Console e rodar os comandos para criar as bases de dados
+
+
 ### Cadastro de Conta ###
   
 Métodos para CRUD da conta  
