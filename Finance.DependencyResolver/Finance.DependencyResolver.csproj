@@ -7,8 +7,8 @@
     <ProjectGuid>{752B6DCB-1442-4E1D-B24B-42A135D6A5A2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FinanceDependencyResolver</RootNamespace>
-    <AssemblyName>FinanceDependencyResolver</AssemblyName>
+    <RootNamespace>Finance.DependencyResolver</RootNamespace>
+    <AssemblyName>Finance.DependencyResolver</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
