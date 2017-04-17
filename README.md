@@ -35,7 +35,7 @@ URL
 * GET /api/Transaction/GetSummary : Obter resumo agrupado por Conta, Ano e Mês
 * POST /api/Transaction : Cadastrar transação
 * PUT /api/Transaction : Alterar Transação
-* DELETE /api/Transaction : Remover Transação
+* DELETE /api/Transaction/1 : Remover Transação com o Id 1
 
 Para os métodos POST e PUT, segue formato do Json:
 	{
