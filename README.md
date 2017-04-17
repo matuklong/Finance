@@ -1,29 +1,50 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+Seja bem vindo a aplicação financeira. Nela você poderá cadastrar contas e lançar transações.
+Os métodos estão sem autenticação de usuário.
+Estamos em contrução da aplicação, e só é possível utilizar a aplicação através de métodos Web.Api. Abaixo você encontrará os métodos disponíveis.
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
+### Cadastro de Conta ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Métodos para CRUD da conta
 
-### Contribution guidelines ###
+URL
+* GET /api/BankAccount : Obter todas as contas
+* GET /api/BankAccount/1 : Obter conta com o Id 1
+* POST /api/BankAccount : Cadastrar conta
+* PUT /api/BankAccount : Alterar conta
 
-* Writing tests
-* Code review
-* Other guidelines
+Para os métodos POST e PUT, segue formato do Json:
+	{
+	"AccountId": 2,
+	"BankName": "Itaú",
+	"AccountAgency": "9345",
+	"AccountNumber": "243487-8",
+	"AccountDescription": "Conta Secundária"
+	}
 
-### Who do I talk to? ###
+### Transações ###
 
-* Repo owner or admin
-* Other community or team contact
+Métodos para lançar transações
+
+URL
+* GET /api/Transaction : Obter todas as transações limitadas aos 2 últimos meses
+* GET /api/Transaction/1 : Obter transações da conta com o Id 1. Transações limitadas aos 2 últimos meses
+* GET /api/Transaction/GetSummary : Obter resumo agrupado por Conta, Ano e Mês
+* POST /api/Transaction : Cadastrar transação
+* PUT /api/Transaction : Alterar Transação
+* DELETE /api/Transaction : Remover Transação
+
+Para os métodos POST e PUT, segue formato do Json:
+	{
+	"TransactionId": 3,
+	"AccountId": 1, 
+	"TransactionValue": 50.00, 
+	"InclusionDate": "2017-03-15T18:25:43.511Z", 
+	"TransactionDescription": "Transação 001", 
+	"Capitalization": false, 
+	"AccountTransfer": false
+	}
+
