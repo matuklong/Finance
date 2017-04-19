@@ -7,36 +7,38 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Microsoft.AspNet.Identity;
 
 namespace Finance.Web3.Controllers
 {
     [RoutePrefix("api/BankAccount")]
+    [Authorize]
     public class BankAccountController : ApiController
     {
-        IAccountService _accountService;
+        private IAccountService _accountService;
+        private string userId = "";
+
         public BankAccountController(IAccountService accountService)
         {
             _accountService = accountService;
+            userId = this.User.Identity.GetUserId().ToString();
         }
 
         // GET: api/BanckAccount
         public async Task<IEnumerable<Account>> Get()
         {
-            var userId = this.User.Identity.Name;
             return await _accountService.GetAllAccounts(userId);
         }
 
         // GET: api/BanckAccount/5
         public async Task<Account> Get(int id)
         {
-            var userId = this.User.Identity.Name;
             return await _accountService.GetAccount(userId, id);
         }
 
         // POST: api/BanckAccount
         public async Task<object> Post([FromBody]Account account)
         {
-            var userId = this.User.Identity.Name;
             await _accountService.AddAccount(account.BankName, account.AccountAgency, account.AccountNumber, account.AccountDescription, userId);
             return new { Message = "Conta cadastrada com sucesso", Error = false };
         }
@@ -44,7 +46,6 @@ namespace Finance.Web3.Controllers
         // PUT: api/BanckAccount
         public async Task<object> Put([FromBody]Account account)
         {
-            var userId = this.User.Identity.Name;
             await _accountService.ChangeAccount(account.AccountId, account.BankName, account.AccountAgency, account.AccountNumber, account.AccountDescription, userId);
             return new { Message = "Conta atualizada com sucesso", Error = false };
         }

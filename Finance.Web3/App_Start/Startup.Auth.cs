@@ -54,9 +54,9 @@ namespace Finance.Web3
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1006926619439772",
+               appSecret: "8547c5d7595f9dbcb6deb400cde34440");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {

@@ -13,6 +13,7 @@ using Finance.Web3.Models;
 namespace Finance.Web3.Controllers
 {
     [Authorize]
+    [RequireHttps]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
